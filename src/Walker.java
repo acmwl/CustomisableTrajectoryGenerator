@@ -2,19 +2,13 @@ import java.util.ArrayList;
 
 public class Walker {
 	private ArrayList<Trajectory> trajectories;
-	private int W;
+	private int maxWalks;
 	
 	public Walker(int W) {
-		this.W = W;
+		this.maxWalks = W;
 		this.trajectories = new ArrayList<Trajectory>();
 	}
-	
-	public boolean isComplete() {
-		if(this.trajectories.size()<W) {
-			return false;
-		}
-		return true;
-	}
+
 	
 	public Trajectory getTrajectory(int pos) {
 		return this.trajectories.get(pos);
@@ -34,6 +28,10 @@ public class Walker {
 	
 	public ArrayList<Trajectory> getTrajectories(){
 		return this.trajectories;
+	}
+	
+	public int getMaxWalks() {
+		return maxWalks;
 	}
 	
 }

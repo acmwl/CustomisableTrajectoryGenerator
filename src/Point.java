@@ -40,6 +40,10 @@ public class Point {
 		return new Point(this.x+x,this.y+y);
 	}
 	
+	public double distanceTo(Point other) {
+		return Math.sqrt(Math.pow(x-other.x,2)+Math.pow(y-other.y,2));
+	}
+	
 	public double getX() {
 		return this.x;
 	}
@@ -57,7 +61,7 @@ public class Point {
 	}
 	
 	public String toStringNorm(){
-		return ""+x/100+","+y/100;
+		return ""+x/RNG.getRangeX()+","+y/RNG.getRangeY();
 	}
 	public String toString() {
 		return ""+x+","+y;
